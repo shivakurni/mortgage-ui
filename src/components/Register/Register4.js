@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import './Register.css';
 import axios from 'axios';
 import swal from 'sweetalert'
-// import { withTranslation} from 'react-i18next';
+import { withTranslation} from 'react-i18next';
 
 
 
@@ -24,7 +24,8 @@ class Register4 extends Component{
          }
          console.log(registerData);
              axios.post('http://10.117.189.99:9093/mortgage/mortgageSignup',registerData).then((response)=>{
-             console.log(response.data)
+             console.log(response.data);
+            //  this.props.history.push('/login');
             //  localStorage.setItem("loginId",response.data.loginId);
             //  localStorage.setItem("password",response.data.password);
             //  localStorage.setItem("transactionAccountNumer",response.data.transactionAccountNumer);
@@ -69,5 +70,5 @@ class Register4 extends Component{
         )
     }
 }
-// export default withTranslation()(Register4);
-export default Register4;
+export default withTranslation()(Register4);
+// export default Register4;
